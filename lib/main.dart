@@ -14,13 +14,14 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: appTitle,
       home: HomeModule(),
+      initialRoute: Routes.HOME,
       routes: _getApplicationRoutes() ,
     );
   }
 
   Map<String, WidgetBuilder> _getApplicationRoutes() {
     return {
-      Routes.SHOPPING: (context) => ShoppingModule(),
+      Routes.SHOPPING : (context) => ShoppingModule(),
     };
   }
 }
