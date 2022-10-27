@@ -1,20 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:market_manager/widgets/Menu.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  static const appTitle = 'Market Manager';
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Welcome to Flutter',
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Welcome to Flutter'),
-        ),
-        body: const Center(
-          child: Text('Hello World'),
-        ),
-      ),
+    return const MaterialApp(
+      title: appTitle,
+      home: Menu(title: appTitle),
     );
   }
 }
