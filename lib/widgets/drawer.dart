@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:market_manager/utils/Assets.dart';
 
-import '../modules/Compras.dart';
 
 class DrawerWidget extends StatelessWidget {
 
@@ -44,7 +43,7 @@ class DrawerWidget extends StatelessWidget {
             leading: Icon(Icons.add_shopping_cart),
             title: const Text('Compras'),
             onTap: () {
-              Compras();
+              Navigator.pop(context);
             },
           ),
           ListTile(

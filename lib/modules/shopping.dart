@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class Compras extends StatefulWidget {
+class ShoppingModule extends StatefulWidget {
   @override
-  State<StatefulWidget> createState() => ComprasState();
+  State<StatefulWidget> createState() => ShoppingModuleState();
 }
 
-class ComprasState extends State<Compras> with SingleTickerProviderStateMixin {
+class ShoppingModuleState extends State<ShoppingModule> with SingleTickerProviderStateMixin {
   late TabController _tabController;
  /* static const List<Tab> sections;
 

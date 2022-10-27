@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:market_manager/modules/Home.dart';
-import 'modules/Compras.dart';
+import 'package:market_manager/modules/home.dart';
+import 'constants/routes.dart';
+import 'modules/shopping.dart';
 
 void main() => runApp(MyApp());
 
@@ -13,12 +14,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: appTitle,
       home: HomeModule(),
+      routes: _getApplicationRoutes() ,
     );
   }
 
   Map<String, WidgetBuilder> _getApplicationRoutes() {
     return {
-      /*Routes.COMPRAS: (context) => Compras(),*/
+      Routes.SHOPPING: (context) => ShoppingModule(),
     };
   }
 }
