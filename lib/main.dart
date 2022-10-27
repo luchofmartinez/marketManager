@@ -1,18 +1,26 @@
 import 'package:flutter/material.dart';
-import 'package:market_manager/widgets/Menu.dart';
+import 'package:market_manager/modules/home.dart';
+import 'constants/routes.dart';
+import 'modules/shopping.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
 
-  static const appTitle = 'Market Manager';
+  String appTitle = 'Market Manager';
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       title: appTitle,
-      home: Menu(title: appTitle),
+      home: HomeModule(),
+      routes: _getApplicationRoutes() ,
     );
+  }
+
+  Map<String, WidgetBuilder> _getApplicationRoutes() {
+    return {
+      Routes.SHOPPING: (context) => ShoppingModule(),
+    };
   }
 }
