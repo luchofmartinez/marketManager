@@ -1,4 +1,4 @@
 abstract class Routes {
-  static const HOME = '/main';
+  static const HOME = '/home';
   static const SHOPPING = '/shopping';
 }
