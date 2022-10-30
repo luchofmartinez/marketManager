@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:market_manager/modules/home.dart';
 import 'constants/routes.dart';
-import 'modules/shopping.dart';
+import 'modules/shoppingModule/shopping.dart';
 
 void main() => runApp(MyApp());
 
