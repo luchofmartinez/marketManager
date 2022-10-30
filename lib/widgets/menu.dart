@@ -59,7 +59,7 @@ class DrawerWidget extends StatelessWidget {
           ),
           ListTile(
             leading: Icon(Icons.settings),
-            title: const Text('Configuracion'),
+            title: const Text('Configuración'),
             onTap: () {
               // Update the state of the app
               // ...

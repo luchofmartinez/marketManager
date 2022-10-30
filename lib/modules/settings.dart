@@ -6,7 +6,7 @@ class SettingsModule extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Settings'),
+        title: Text('Configuración'),
       ),
       body: ListView(
           children: [
