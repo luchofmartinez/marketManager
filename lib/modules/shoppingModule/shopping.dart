@@ -1,31 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:market_manager/modules/shoppingModule/bloc/builders/body.dart';
+import 'package:market_manager/modules/shoppingModule/bloc/cubit.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
 
 class ShoppingModule extends StatefulWidget {
   @override
-  State<StatefulWidget> createState() => ShoppingModuleState();
+  _ShoppingModuleState createState() => _ShoppingModuleState();
 }
 
-class ShoppingModuleState extends State<ShoppingModule> with SingleTickerProviderStateMixin {
-  late TabController _tabController;
- /* static const List<Tab> sections;*/
-
-  /*sections = <Tab>[
-  const Tab(icon: Icon(Icons.ac_unit_rounded)),
-  const Tab(icon: Icon(Icons.apple)),
-  const Tab(icon: Icon(Icons.all_inclusive)),
-  const Tab(icon: Icon(Icons.vaccines_sharp)),
-  const Tab(icon: Icon(Icons.)),
-  const Tab(icon: Icon(Icons.vaccines_sharp)),
-  ];*/
+class _ShoppingModuleState extends State<ShoppingModule> {
+  final ShoppingCubit _shoppingCubit = ShoppingCubit();
 
   @override
-  void initState() {
-    _tabController = TabController(length: 10, vsync: this);
-
-    super.initState();
+  void didChangeDependencies() {
+    _shoppingCubit.fetchShoppingList();
+    super.didChangeDependencies();
   }
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -34,42 +25,21 @@ class ShoppingModuleState extends State<ShoppingModule> with SingleTickerProvide
       child: Scaffold(
         appBar: AppBar(title: const Text("Compras")),
         body: SafeArea(
-          child: ListView(
-            children: _buildShoppingListBody(),
+          child: BlocProvider<ShoppingCubit>(
+            create: (context) => _shoppingCubit,
+            child: _buildBodyModule(),
           ),
         ),
-        floatingActionButton:NewListButton(tabController: _tabController) ,
+        floatingActionButton: NewListButton(),
       ),
     );
   }
 
-  List<Widget> _buildShoppingListBody() {
-    List<String> _listasCreadas = ["Dato", "Dato", "Dato"];
-    List <Widget> lista = [];
-
-    _listasCreadas.forEach((element) {
-      Widget newWidget = ShoppingList();
-      lista.add(newWidget);
-    });
-
-    return lista;
-    /*if (_listasCreadas.isNotEmpty) {
-      _buildEmptyShoppingListBody();
-    } else {
-        _listasCreadas.forEach((element) {ShoppingList();});
-    }
-    return Container();*/
-}
-
-  Widget _buildEmptyShoppingListBody() {
-    return const Center(
-      child: Text(
-        "No hay listas creadas"
-      ),
-    );
+  Widget _buildBodyModule() {
+    return BlocBuilder(bloc: _shoppingCubit, builder: ShoppingBodyBuilder().builder());
   }
-}
 
+}
   class ShoppingList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -87,9 +57,8 @@ class ShoppingModuleState extends State<ShoppingModule> with SingleTickerProvide
 
 
 class NewListButton extends StatelessWidget {
-  final TabController tabController;
 
-  const NewListButton({super.key, required this.tabController});
+  const NewListButton({super.key});
 
   @override
   Widget build(BuildContext context) {
