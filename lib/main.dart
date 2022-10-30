@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:market_manager/modules/home.dart';
+import 'package:market_manager/modules/settings.dart';
 import 'constants/routes.dart';
 import 'modules/shopping.dart';
 
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
   Map<String, WidgetBuilder> _getApplicationRoutes() {
     return {
       Routes.SHOPPING: (context) => ShoppingModule(),
+      Routes.SETTINGS: (context) => SettingsModule(),
     };
   }
 }

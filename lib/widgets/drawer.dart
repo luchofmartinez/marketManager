@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:market_manager/constants/routes.dart';
 import 'package:market_manager/utils/Assets.dart';
 
 
@@ -63,7 +64,7 @@ class DrawerWidget extends StatelessWidget {
               // Update the state of the app
               // ...
               // Then close the drawer
-              Navigator.pop(context);
+              Navigator.pushNamed(context, Routes.SETTINGS);
             },
           ),
         ],
