@@ -10,8 +10,14 @@ class ShoppingCubit extends Cubit<ShoppingState> {
   ShoppingCubit() : super(LoadingState());
 
 void fetchShoppingList() {
-  MarketListItem item1 = new MarketListItem("Costeleta","Costeleta por unidad", 5.0, "assets/images/imagenMenu.png");
   List<MarketList> userMarketList = [];
+  MarketListItem item1 = new MarketListItem("Costeleta","Costeleta por unidad", 5.0, "assets/images/imagenMenu.png");
+  MarketListItem item2 = new MarketListItem("Pure de tomate","Pure de tomate de 350g", 6.0, "assets/images/imagenMenu.png");
+  Map<MarketListItem, int> _items = {item1 : 5, item2 : 3};
+  MarketList marketList1 = MarketList(20.0,_items, DateTime(2022,10, 30), DateTime(2022,10, 30));
+  MarketList marketList2 = MarketList(20.0,_items, DateTime(2022,10, 30), DateTime(2022,10, 30));
+  userMarketList.add(marketList1);
+  userMarketList.add(marketList2);
 
   if (userMarketList.isEmpty) {
     emit(EmptyShoppingListState());
@@ -20,6 +26,10 @@ void fetchShoppingList() {
     var selectedMarketLists = HashSet<MarketList>();
     emit(DisplayShoppingListState(userMarketList,displayedMarketLists,selectedMarketLists));
   }
+}
+
+void addShoppingList() {
+  emit(AddShoppingListState());
 }
 
 }
