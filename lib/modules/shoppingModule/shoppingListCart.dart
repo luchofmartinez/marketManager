@@ -1,31 +1,38 @@
 
 import 'package:flutter/material.dart';
 
-class ShoppingListWidget extends StatelessWidget {
-  final TabController tabController;
+class ShoppingListCart extends StatelessWidget {
 
-  const ShoppingListWidget({super.key, required this.tabController});
+  const ShoppingListCart({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Container(
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        ShoppingInformationCard()
+        /*Container(
             child: TabBar(
               controller: tabController,
               isScrollable: true,
               tabs: List.generate( 10, (index) => ComprasTabsWidget()),
             ),
-          ),
-          Expanded(
-            child: Container(),
-          ),
-        ],
-      ),
+          ),*/
+      ],
     );
   }
+}
+
+class ShoppingInformationCard extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+
+    );
+  }
+
+
 }
 
 class ComprasTabsWidget extends StatelessWidget {

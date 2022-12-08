@@ -36,9 +36,9 @@ class AddShoppingListButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return _ShoppingListButton(
         tag: "Add Shopping List",
-        onPressed: () => _addShoppingList,
+        onPressed: () => _addShoppingList(context),
         icon: Icons.add,
-        color: Colors.lightBlue);
+        color: Colors.green);
   }
 
   void _addShoppingList(BuildContext context) {
@@ -91,7 +91,7 @@ class ShoppingListActionButton extends StatelessWidget {
 
   const ShoppingListActionButton._({super.key, required this.buttons});
 
-  factory ShoppingListActionButton.singleSelect() {
+  factory ShoppingListActionButton.Select() {
     var buttons = [
       DeleteShoppingListButton(),
       const SizedBox(height: 15),

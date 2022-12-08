@@ -10,7 +10,7 @@ class HomeModule extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: DrawerWidget(),
-      appBar: AppBar(title: Text(appTitle)),
+      appBar: AppBar(title: Text(appTitle), backgroundColor: Colors.green,),
       body: HomeBodyWidget(),
     );
   }

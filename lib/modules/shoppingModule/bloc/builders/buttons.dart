@@ -14,7 +14,7 @@ class ShoppingButtonsBuilder extends WidgetBuilderFactory<ShoppingState> {
       if (selectedList.isEmpty) {
         return ShoppingListActionButton.noSelect();
       }
-        return ShoppingListActionButton.singleSelect();
+        return ShoppingListActionButton.Select();
     }
 
     if (state is EmptyShoppingListState) {

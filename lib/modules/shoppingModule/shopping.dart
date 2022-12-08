@@ -21,23 +21,19 @@ class _ShoppingModuleState extends State<ShoppingModule> {
 
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: 10,
+    return BlocProvider<ShoppingCubit>(
+      create: (context) => _shoppingCubit,
       child: Scaffold(
         appBar: _buildAppBar(),
         body: SafeArea(
-          child: BlocProvider<ShoppingCubit>(
-            create: (context) => _shoppingCubit,
-            child: _buildBodyModule(),
-          ),
-        ),
+          child: _buildBodyModule()),
         floatingActionButton: _buildFloatingActionButton(),
       ),
     );
   }
 
   PreferredSizeWidget _buildAppBar() {
-    return AppBar(title: const Text("Compras"));
+    return AppBar(title: const Text("Compras"), backgroundColor: Colors.green);
   }
 
   Widget _buildBodyModule() {

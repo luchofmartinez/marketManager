@@ -14,8 +14,8 @@ void fetchShoppingList() {
   MarketListItem item1 = new MarketListItem("Costeleta","Costeleta por unidad", 5.0, "assets/images/imagenMenu.png");
   MarketListItem item2 = new MarketListItem("Pure de tomate","Pure de tomate de 350g", 6.0, "assets/images/imagenMenu.png");
   Map<MarketListItem, int> _items = {item1 : 5, item2 : 3};
-  MarketList marketList1 = MarketList(20.0,_items, DateTime(2022,10, 30), DateTime(2022,10, 30));
-  MarketList marketList2 = MarketList(20.0,_items, DateTime(2022,10, 30), DateTime(2022,10, 30));
+  MarketList marketList1 = MarketList(123, "Lista1", 20.0,_items, DateTime(2022,10, 30), DateTime(2022,10, 30), MarketListState.COMPLETED);
+  MarketList marketList2 = MarketList(123, "Lista2", 3000.0,_items, DateTime(2022,11, 03), DateTime(2022,11, 03), MarketListState.INCOMPLETE);
   userMarketList.add(marketList1);
   userMarketList.add(marketList2);
 

@@ -44,6 +44,9 @@ dev_dependencies:
   flutter_bloc: ^8.1.1
   provider: ^6.0.4
 
+  #Libs for Date
+  intl: ^0.17.0
+
   flutter_test:
     sdk: flutter
 
